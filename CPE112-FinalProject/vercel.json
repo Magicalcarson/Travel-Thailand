@@ -1,9 +1,16 @@
 {
-  "redirects": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/",
-      "destination": "/web/index.html",
-      "permanent": false
+      "src": "**/*",
+      "use": "@vercel/static"
     }
+  ],
+  "routes": [
+    { "src": "/style.css", "dest": "/web/style.css" },
+    { "src": "/app.js", "dest": "/web/app.js" },
+    { "src": "/data.js", "dest": "/web/data.js" },
+    { "src": "/", "dest": "/web/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }

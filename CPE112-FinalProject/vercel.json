@@ -1,16 +1,12 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "**/*",
-      "use": "@vercel/static"
+      "source": "/data/(.*)",
+      "destination": "/data/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/web/$1"
     }
-  ],
-  "routes": [
-    { "src": "/style.css", "dest": "/web/style.css" },
-    { "src": "/app.js", "dest": "/web/app.js" },
-    { "src": "/data.js", "dest": "/web/data.js" },
-    { "src": "/", "dest": "/web/index.html" },
-    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
